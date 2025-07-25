@@ -205,7 +205,7 @@
             setTimeout(() => {
             hideSpinner();
             if (callback) callback();
-            }, 900 + Math.random() * 600); // 0.9-1.5s
+            }, 200 + Math.random() * 60); // 0.9-1.5s
         }
 
         // Patch showAIML

@@ -1,0 +1,202 @@
+body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+            padding: 24px 0 16px 0;
+            text-align: center;
+            border-radius: 0 0 24px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            transition: box-shadow 0.2s;
+        }
+        header:hover {
+            box-shadow: 0 4px 16px rgba(44, 62, 80, 0.13);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #2d3a4b;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #e0eafc;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+            padding: 32px 28px;
+            width: 260px;
+            text-align: center;
+            transition: transform 0.15s, box-shadow 0.15s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #7fbcfb55 0%, #5ee7df33 100%);
+            border-radius: 50%;
+            z-index: 0;
+            transition: opacity 0.3s;
+        }
+        .card:hover::before {
+            opacity: 0.7;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+        }
+        .card h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.3rem;
+            color: #3a4d6b;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+        .card p {
+            color: #6b7a90;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+        .card a {
+            display: inline-block;
+            padding: 8px 22px;
+            background: linear-gradient(90deg, #7fbcfb 0%, #5ee7df 100%);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px #e0eafc;
+            position: relative;
+            z-index: 1;
+        }
+        .card a:hover {
+            background: linear-gradient(90deg, #5ee7df 0%, #7fbcfb 100%);
+            box-shadow: 0 4px 16px #b2e0f7;
+        }
+        .card:active {
+            transform: scale(0.98);
+        }
+        @media (max-width: 800px) {
+            .dashboard {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* Add subtle fade-in animation */
+        .dashboard {
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: #e0eafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b2e0f7;
+            border-radius: 8px;
+        }
+        /* Responsive font size */
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .card {
+                width: 90vw;
+                padding: 24px 10px;
+            }
+        }
+
+        .welcome-msg {
+            color: #3a4d6b;
+            font-size: 1.15rem;
+            margin: 10px 0 0 0;
+            font-weight: 500;
+            background: linear-gradient(90deg, #e0eafc 60%, #f9f6ff 100%);
+            border-radius: 10px;
+            padding: 10px 18px;
+            display: inline-block;
+            box-shadow: 0 2px 8px #e0eafc;
+            letter-spacing: 0.2px;
+            animation: popIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+            }
+            @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            80% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+            }
+
+            /* Dark mode styles */
+    body.dark-mode {
+        background: linear-gradient(135deg, #232526 0%, #414345 100%);
+        color: #f1f1f1;
+    }
+    body.dark-mode header {
+        background: #232526;
+        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.25);
+    }
+    body.dark-mode .card {
+        background: #2d3a4b;
+        color: #f1f1f1;
+        box-shadow: 0 4px 24px rgba(44, 62, 80, 0.25);
+    }
+    body.dark-mode .card h2,
+    body.dark-mode .card p {
+        color: #f1f1f1;
+    }
+    body.dark-mode .card a {
+        background: linear-gradient(90deg, #232526 0%, #414345 100%);
+        color: #fff;
+        box-shadow: 0 2px 8px #232526;
+    }
+    body.dark-mode .card a:hover {
+        background: linear-gradient(90deg, #414345 0%, #232526 100%);
+        box-shadow: 0 4px 16px #232526;
+    }
+    body.dark-mode .welcome-msg {
+        background: linear-gradient(90deg, #232526 60%, #414345 100%);
+        color: #f1f1f1;
+        box-shadow: 0 2px 8px #232526;
+    }
+    body.dark-mode ::-webkit-scrollbar-thumb {
+        background: #414345;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+    body.dark-mode #spinner {
+        background:rgba(35,37,38,0.7);
+    }
+    body.dark-mode #spinner div {
+        border:6px solid #414345;
+        border-top:6px solid #5ee7df;
+    }

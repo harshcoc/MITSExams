@@ -1,0 +1,78 @@
+body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .teacher-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .teacher-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .teacher-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .teacher-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #2b6cb0;
+    }
+
+    .teacher-subinfo {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .stars {
+      color: #f6ad55;
+      font-size: 1.2rem;
+    }
+
+    .report-toggle {
+      margin-top: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #3182ce;
+      background: none;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .report-text {
+      display: none;
+      margin-top: 10px;
+      padding: 12px;
+      background: #ebf8ff;
+      border-left: 4px solid #3182ce;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .teacher-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }

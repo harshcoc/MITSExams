@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Centre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2980b9;
+            --secondary: #6dd5fa;
+            --accent: #e0eafc;
+            --glass-bg: rgba(255,255,255,0.55);
+            --glass-border: rgba(255,255,255,0.25);
+            --shadow: 0 8px 32px rgba(44,62,80,0.10);
+            --shadow-hover: 0 12px 32px rgba(44,62,80,0.18);
+            --card-radius: 1.2rem;
+            --btn-radius: 0.5rem;
+            --transition: 0.22s cubic-bezier(.4,0,.2,1);
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 56rem;
+            margin: 3vw auto;
+            padding: 2vw;
+            background: rgba(255,255,255,0.95);
+            border-radius: 1.1rem;
+            box-shadow: var(--shadow);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-shadow: 0 2px 8px rgba(44,62,80,0.08);
+            font-size: 2.1rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+            gap: 2vw;
+        }
+        .card {
+            background: linear-gradient(120deg, #f8fafc 60%, #e9f0fb 100%);
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.3rem 1.3rem 1.3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1.5px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            /* Glassmorphism */
+            background: linear-gradient(120deg, #f8fafc99 60%, #e9f0fbcc 100%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            /* Entry animation */
+            opacity: 0;
+            transform: translateY(2.5rem) scale(0.98);
+            animation: cardIn 0.7s var(--transition) forwards;
+        }
+        .card:nth-child(1) { animation-delay: 0.05s; }
+        .card:nth-child(2) { animation-delay: 0.12s; }
+        .card:nth-child(3) { animation-delay: 0.19s; }
+        .card:nth-child(4) { animation-delay: 0.26s; }
+        .card:nth-child(5) { animation-delay: 0.33s; }
+        .card:nth-child(6) { animation-delay: 0.40s; }
+
+        @keyframes cardIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2.5rem;
+            right: -2.5rem;
+            width: 5rem;
+            height: 5rem;
+            background: radial-gradient(circle, #6dd5fa33 60%, transparent 100%);
+            z-index: 0;
+        }
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-0.3rem) scale(1.025);
+            border: 1.5px solid var(--secondary);
+            background: linear-gradient(120deg, #e0eafcbb 60%, #b2c9e6cc 100%);
+        }
+        .icon {
+            font-size: 3.2rem;
+            margin-bottom: 1.1rem;
+            color: var(--primary);
+            filter: drop-shadow(0 2px 8px #b2c9e6);
+            transition: color var(--transition), filter var(--transition);
+        }
+        .card:hover .icon {
+            color: #1a5a85;
+            filter: drop-shadow(0 2px 12px #6dd5fa);
+        }
+        .card-title {
+            font-size: 1.13rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 1.1rem;
+            text-align: center;
+            letter-spacing: 0.2px;
+            transition: color var(--transition);
+            cursor: pointer;
+        }
+        .card:hover .card-title {
+            color: var(--primary);
+        }
+        /* Tooltip */
+        .card-title[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -120%);
+            background: #2c3e50ee;
+            color: #fff;
+            padding: 0.4em 0.9em;
+            border-radius: 0.5em;
+            font-size: 0.98rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px #b2c9e6;
+            pointer-events: none;
+            opacity: 1;
+            z-index: 10;
+        }
+        .card-title[data-tooltip]::after {
+            opacity: 0;
+            transition: opacity 0.18s;
+        }
+        .card-title[data-tooltip]:hover::after {
+            opacity: 1;
+        }
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+            color: #fff;
+            border: none;
+            border-radius: var(--btn-radius);
+            padding: 0.65em 1.4em;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background var(--transition), box-shadow var(--transition), filter var(--transition);
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+            position: relative;
+            overflow: hidden;
+            outline: none;
+        }
+        .download-btn i {
+            margin-right: 0.6em;
+            font-size: 1.1em;
+        }
+        .download-btn:focus-visible {
+            outline: 2px solid #34495e;
+            outline-offset: 2px;
+        }
+        /* Button Glow on Hover */
+        .download-btn:hover, .download-btn:focus-visible {
+            background: linear-gradient(90deg, #1a5a85 60%, #2980b9 100%);
+            box-shadow: 0 4px 16px #6dd5fa77, 0 2px 8px #b2c9e6;
+            filter: brightness(1.08);
+        }
+        /* Ripple Effect */
+        .download-btn .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.5s linear;
+            background: rgba(255,255,255,0.45);
+            pointer-events: none;
+            z-index: 2;
+        }
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            html { font-size: 15px; }
+            .container { padding: 0.5rem; }
+            .card { padding: 1.2rem 0.5rem 0.7rem 0.5rem; }
+            .grid { gap: 1rem; }
+        }
+        /* Custom scrollbar for desktop */
+        @media (min-width: 601px) {
+            ::-webkit-scrollbar {
+                width: 0.6rem;
+                background: #e3eaf3;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #b2c9e6;
+                border-radius: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Centre</h1>
+        <div class="grid">
+            <!-- Academic Calendar.pdf -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-pdf"></i>
+                <div class="card-title" data-tooltip="PDF Document">Academic Calendar.pdf</div>
+                <a href="https://drive.google.com/file/d/1EEOjSdQK8ow8Kb_lYoLmaMAJb-LpVWjP/view?usp=drive_link" class="download-btn" target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+            <!-- Lab Report.docx -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-word"></i>
+                <div class="card-title" data-tooltip="Word Document">Lab Report.docx</div>
+                <a href="https://docs.google.com/document/d/1pdQHgVcXJIoSfx26aj6b6aJBPHRXyqve/edit?usp=drive_link&ouid=113501493687451649031&rtpof=true&sd=true" class="download-btn"target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+            <!-- Marking Schema.pdf -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-pdf"></i>
+                <div class="card-title" data-tooltip="PDF Document">Marking Schema.pdf</div>
+                <a href="https://drive.google.com/file/d/1W9H8iyi304bxOqIf2hSPInDXZ5G82Qyd/view?usp=drive_link" class="download-btn"target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+            <!-- Resume Structure.docx -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-word"></i>
+                <div class="card-title" data-tooltip="Word Document">Resume Structure.docx</div>
+                <a href="https://docs.google.com/document/d/1lYh_cH-L7QFqXTqZc16tbGe-jbF18ckP/edit?usp=drive_link&ouid=113501493687451649031&rtpof=true&sd=true" class="download-btn" target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+            <!-- Project Report Sample.docx -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-word"></i>
+                <div class="card-title" data-tooltip="Word Document">Project Report Sample.docx</div>
+                <a href="https://docs.google.com/document/d/1073ruRIsHvySpJeCNUgqOyKV822FnJPp/edit?usp=drive_link&ouid=113501493687451649031&rtpof=true&sd=true" class="download-btn" target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+            <!-- Proficiency Report.pptx -->
+            <div class="card">
+                <i class="icon fa-solid fa-file-powerpoint"></i>
+                <div class="card-title" data-tooltip="PowerPoint Presentation">Proficiency Report.pptx</div>
+                <a href="https://docs.google.com/presentation/d/1z9OoE8CPdD7bafZIwYgYBiz8LJRG7nUz/edit?usp=drive_link&ouid=113501493687451649031&rtpof=true&sd=true" class="download-btn" target="_blank" download>
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Ripple effect for download buttons
+    document.querySelectorAll('.download-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            const rect = btn.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+            btn.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove());
+        });
+    });
+    </script>
+</body>
+</html>

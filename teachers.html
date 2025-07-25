@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Reports & Ratings</title>
+  <link rel="stylesheet" href="teachers.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+
+  <h1>👨‍🏫 Teacher Reports & Ratings</h1>
+
+  <!-- ✅ Sample Teacher Block -->
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Abhishek Bhatt</h2>
+        <div class="teacher-subinfo">Subject: Digital Logic Design | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★☆ (3.9)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      🧠 Be consistent with attendance, revise weekly, ask doubts, and try to stay quiet in his class. 
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘 Focus more on truth tables, and flip-flop types. Practice questions — especially numerical problems.
+    </div>
+  </div>
+
+  <!-- ✅ Duplicate Below Block for More Teachers -->
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Arun Kumar</h2>
+        <div class="teacher-subinfo">Subject: Internet and Web Technologies Lab | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★★ (4.2)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be punctual and complete assignments early. He loves real-world examples.
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘  He favors clear diagrams and real-life examples in answers. In other subjects like OOPs, he prefers to ask coding problems.
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. ATUL KUMAR RAY</h2>
+        <div class="teacher-subinfo">Subject: Linear Algebra | Dept: MAC</div>
+      </div>
+      <div class="stars">★★★★★ (4.8)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 He is one of the most knowledgeable and friendly math teachers, and truly one of the best in the college.
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘  Practice PYQ numerical questions as well as theory questions.
+    </div>
+  </div>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Bhagat S. Raghuwanshi</h2>
+        <div class="teacher-subinfo">Subject: Foundations of Machine Learning | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★☆ (3.9)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be punctual and complete assignments early. 
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘  Just learn from his PPT to get a full score.
+    </div>
+  </div>
+
+
+
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2> Dr. Neelam Arya</h2>
+        <div class="teacher-subinfo">Subject: Discrete Structures | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★☆ (3.6)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be punctual and complete assignments early. 
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘  Practice PYQ numerical questions.
+    </div>
+  </div>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Mir Shahnawaz Ahmad</h2>
+        <div class="teacher-subinfo">Subject: Problem Solving and Programming | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★★ (4.1)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be punctual and try to active in his class. .
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘 Focus on coding skills and data structures. He mostly asks  high-level coding questions.
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Shipra Shukla</h2>
+        <div class="teacher-subinfo">Subject: Problem Solving and Programming | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★★ (4.3)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be punctual and try to active in her class. Engage in discussions — she appreciates participation.
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘 Focus on coding skills and data structures. She mostly asks coding questions.
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="teacher-card">
+    <div class="teacher-header">
+      <div>
+        <h2>Dr. Vibha Tiwari</h2>
+        <div class="teacher-subinfo">Subject: Basic Electrical & Electronics Engineering | Dept: AI</div>
+      </div>
+      <div class="stars">★★★★☆ (3.4)</div>
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">Understanding  Teacher's Style</button>
+    <div class="report-text">
+      💡 Be consistent with attendance and try to stay quiet in her class. Ratings are given in the BEEE subject, not in other subjects
+    </div>
+
+    <button class="report-toggle" onclick="toggleReport(this)">How to perform best in this teacher's exam?</button>
+    <div class="report-text">
+      📘 Focus on small formulas and theory.
+    </div>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ✅ Add More Teacher Cards Above as Needed -->
+
+  
+ <script src="teachers.js">  </script>
+</body>
+</html>

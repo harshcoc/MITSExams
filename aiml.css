@@ -1,0 +1,147 @@
+body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #e6f0fa; /* Changed from gradient to soft blue */
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #4f8cff 60%, #a3c9f9 100%);
+            color: #e6f0fa; /* Light blue text */
+            padding: 32px 0 22px 0;
+            text-align: center;
+            letter-spacing: 2px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+            text-shadow: 1px 2px 8px #4f8cff44;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            background: #f4faff; /* Changed from white to very light blue */
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(79,140,255,0.10);
+            padding: 40px 36px 30px 36px;
+            position: relative;
+            z-index: 1;
+        }
+        .branch-btn {
+            display: block;
+            width: 220px;
+            margin: 0 auto 30px auto;
+            padding: 17px 0;
+            background: linear-gradient(90deg, #4f8cff 60%, #a3c9f9 100%);
+            color: #e6f0fa;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.25em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #4f8cff22;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .branch-btn:hover {
+            background: linear-gradient(90deg, #a3c9f9 60%, #4f8cff 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .semester-section {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .semester-title {
+            font-size: 1.5em;
+            margin-bottom: 18px;
+            color: #4f8cff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-left: 5px solid #4f8cff;
+            padding-left: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            background: #eaf4ff; /* Light blue background */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #4f8cff11;
+        }
+        th, td {
+            border-bottom: 1px solid #cbe2fa;
+            padding: 13px 10px;
+            text-align: left;
+        }
+        th {
+            background: #d6eaff;
+            color: #4f8cff; /* Light blue text */
+            font-weight: 600;
+            font-size: 1.07em;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: #f0f7ff;
+            transition: background 0.2s;
+        }
+        .actions a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #4f8cff;
+            font-weight: 500;
+            border: 1px solid #4f8cff;
+            border-radius: 5px;
+            padding: 4px 10px;
+            background: #eaf4ff;
+            transition: background 0.2s, color 0.2s;
+        }
+        .actions a:hover {
+            background: #4f8cff;
+            color: #eaf4ff;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0 18px 0;
+            background: linear-gradient(90deg, #4f8cff 60%, #a3c9f9 100%);
+            color: #e6f0fa;
+            margin-top: 40px;
+            font-size: 1.08em;
+            letter-spacing: 1px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 -2px 8px #4f8cff11;
+        }
+        /* Decorative lines */
+        .container:before, .container:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 6px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #4f8cff 60%, #a3c9f9 100%);
+            top: -18px;
+        }
+        .container:before { left: 30px; }
+        .container:after { right: 30px; }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container { padding: 16px 4px 16px 4px; }
+            table, th, td { font-size: 0.97em; }
+        }
+        @media (max-width: 600px) {
+            .container { padding: 6px 0 6px 0; }
+            .branch-btn { width: 98%; font-size: 1em; }
+            .semester-title { font-size: 1.1em; }
+            table, th, td { font-size: 0.93em; }
+            .container:before, .container:after { display: none; }
+        }

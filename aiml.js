@@ -224,23 +224,7 @@
             });
         };
 
-        // --- Footer: Show current date and time ---
-        function updateFooterDateTime() {
-            const footer = document.querySelector('footer');
-            if (!footer) return;
-            const now = new Date();
-            const dateStr = now.toLocaleDateString();
-            const timeStr = now.toLocaleTimeString();
-            // Only keep the original text before date/time
-            let baseText = footer.dataset.baseText;
-            if (!baseText) {
-            baseText = footer.textContent.split(' | ')[0];
-            footer.dataset.baseText = baseText;
-            }
-            footer.textContent = `${baseText} | ${dateStr} ${timeStr}`;
-        }
-        setInterval(updateFooterDateTime, 1000);
-        updateFooterDateTime();
+    // ...existing code...
 
         // --- Easter egg: Triple click header for fun message ---
         let headerClickCount = 0;

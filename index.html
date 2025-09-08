@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student Portal - Home</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
+<html><head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>MITSExams</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7N7N3KG6E"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -14,58 +16,123 @@
 
   gtag('config', 'G-W7N7N3KG6E');
 </script>
-    
+<style type="text/tailwindcss">
+    @keyframes gradient-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .dynamic-bg {
+      background: linear-gradient(-45deg, #111418, #1a202c, #2d3748, #1380ec);
+      background-size: 400% 400%;
+      animation: gradient-animation 15s ease infinite;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #1380ec;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover {
+      color: #1380ec;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: #1380ec;
+    }
+    .card-icon {
+        transition: transform 0.3s ease;
+    }
+    .card:hover .card-icon {
+        transform: scale(1.2);
+    }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>👋 Welcome Juniors to MITS! 🎉✨</h1>
-        <p class="welcome-msg">
-            Hope you enjoy your 1st year journey 🚀📚 — learn, grow, and make amazing memories! 🌟🤝
-        </p>
-        
-        <p style="color:#6b7a90; margin-top:8px;">Your gateway to learning, resources, and discussion</p>
-    </header>
-    <main>
-        <section class="dashboard">
-            <div class="card">
-                <h2>PYQs</h2>
-                <p>Access your main course content and assignments.</p>
-                <a href="pyq.html">PYQ Papers</a>
-            </div>
-            <div class="card">
-                <h2>Download Centre</h2>
-                <p>All important docs in one place</p>
-                <a href="download_centre.html">Download Centre</a>
-            </div>
-            <div class="card">
-                <h2>Teachers</h2>
-                <p>Get to know your teachers and how to excel in their subjects.</p>
-                <a href="teachers.html">Meet Teachers</a>
-            </div>
-            <div class="card">
-                <h2>Important Notifications</h2>
-                <p>College circulars, updates, event announcements.</p>
-                <a href="index.html">View Notices</a>
-            </div>
-        </section>
-    </main>
+<body class="bg-[#111418] font-['Space_Grotesk',_'Noto_Sans',_sans-serif] text-white">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-[#111418]/80 backdrop-blur-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0">
+<svg class="h-10 w-10 text-[#1380ec]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">MITS Juniors</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="nav-link text-base font-medium" href="pyq2.html">PYQs</a>
+<a class="nav-link text-base font-medium" href="download_centre.html">Downloads</a>
+<a class="nav-link text-base font-medium" href="teachers.html">Teachers</a>
+<a class="nav-link text-base font-medium" href="#">Notifications</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-3">
 
-    
-    
-    <!-- Spinner Element -->
-    <div id="spinner" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:9999;align-items:center;justify-content:center;">
-        <div style="border:6px solid #e0eafc;border-top:6px solid #7fbcfb;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
-    </div>
-    
-    
-    <footer style="margin-top:40px;text-align:center;padding:24px 0 12px 0;color:#6b7a90;font-size:1rem;background:rgba(255,255,255,0.7);border-radius:18px 18px 0 0;box-shadow:0 -2px 8px #e0eafc;">
-        <div id="footer-datetime"></div>
-        <div style="margin-top:8px;font-size:0.98rem;">
-            Design &amp; Developed by <strong>Harsh Sharma</strong>
-        </div>
-    </footer>
-    
-
-    <script src="script.js"></script>
-</body>
-</html>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined"> menu </span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative flex min-h-[calc(100vh-5rem)] items-center justify-center dynamic-bg">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="max-w-4xl mx-auto">
+<h1 class="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+                Welcome Juniors to <span class="text-[#1380ec]">MITS</span>
+</h1>
+<p class="mt-6 text-lg text-gray-300 md:text-xl max-w-3xl mx-auto">
+                Streamline your studies at MITS. Access previous year questions, course materials, important notifications, and more—all in one place.
+              </p>
+</div>
+<div class="mt-16 w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<a class="card p-6 rounded-2xl flex flex-col items-center justify-center text-center" href="pyq2.html">
+<div class="card-icon text-5xl mb-4 text-[#1380ec]"><span class="material-symbols-outlined">history_edu</span></div>
+<h3 class="text-xl font-bold">PYQs</h3>
+</a>
+<a class="card p-6 rounded-2xl flex flex-col items-center justify-center text-center" href="download_centre.html">
+<div class="card-icon text-5xl mb-4 text-[#1380ec]"><span class="material-symbols-outlined">download_for_offline</span></div>
+<h3 class="text-xl font-bold">Download Centre</h3>
+</a>
+<a class="card p-6 rounded-2xl flex flex-col items-center justify-center text-center" href="teachers.html">
+<div class="card-icon text-5xl mb-4 text-[#1380ec]"><span class="material-symbols-outlined">school</span></div>
+<h3 class="text-xl font-bold">Teachers</h3>
+</a>
+<a class="card p-6 rounded-2xl flex flex-col items-center justify-center text-center" href="#">
+<div class="card-icon text-5xl mb-4 text-[#1380ec]"><span class="material-symbols-outlined">notifications_active</span></div>
+<h3 class="text-xl font-bold">Notifications</h3>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#181c20] py-6">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-[#9dabb9]">
+<p>Design &amp; Developed by Harsh Sharma</p>
+<p class="mt-1">Madhav Institute of Technology and Science (MITS)</p>
+</div>
+</footer>
+</div>
+</body></html>
